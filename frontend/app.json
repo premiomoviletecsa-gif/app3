@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "StreamPay",
-    "slug": "streampay",
-    "version": "1.0.0",
+    "slug": "streampay3",
+    "version": "1.0.5,
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "streampay",
@@ -64,7 +64,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "your-project-id"
+        "projectId": "ff99e107-f144-4222-b3fa-d902c4f9f59f"
       }
     }
   }

@@ -16,7 +16,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#000"
       },
-      "package": "com.guillermo9108.streampay3",
+      "package": "com.streampay.app",
       "edgeToEdgeEnabled": true
     },
     "web": {

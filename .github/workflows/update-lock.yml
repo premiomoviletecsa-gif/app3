@@ -1,22 +1,19 @@
-name: Update Yarn Lock
-on:
-  workflow_dispatch: # Permite ejecutarlo manualmente
+name: Fix Yarn Lock
+on: workflow_dispatch
 
 jobs:
-  update-lock:
+  fix:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 18 # O la versión que uses
-          cache: 'yarn'
-
-      - name: Install and Update
+          node-version: 18
+      - name: Update Lockfile
         run: |
           yarn install
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add yarn.lock
-          git commit -m "chore: update yarn.lock" || echo "No changes"
-          git push
+          git commit -m "fix: update yarn.lock from action" || echo "No changes"
+          git pus

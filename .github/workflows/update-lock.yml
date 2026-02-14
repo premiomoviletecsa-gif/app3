@@ -6,14 +6,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+          
       - name: Update Lockfile
+        working-directory: frontend
         run: |
+          rm -f yarn.lock
           yarn install
+          
+      - name: Commit and Push
+        run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add yarn.lock
-          git commit -m "fix: update yarn.lock from action" || echo "No changes"
-          git pus
+          git add frontend/yarn.lock
+          git commit -m "fix: regenerate yarn.lock" || echo "No changes to commit"
+          git push
